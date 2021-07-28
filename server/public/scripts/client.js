@@ -11,9 +11,16 @@ function getQuotes() {
     $.ajax({
         method: 'GET',
         url: '/quotes'
-    })
-        .then(function(response) {
-            console.log(response);
-            $('#quotes').append(`<li></li>`)
-        });
+    }) .then(function(response) {
+        console.log(response);
+        let quoteList = $('#quotes');
+        console.log(quoteList);
+        for (let quote of response){
+            quoteList.append(`
+            <li>
+            "${quote.text}" 
+            <em> -- by ${quote.author} </em>
+            </li>`);
+        }
+    });
 }
