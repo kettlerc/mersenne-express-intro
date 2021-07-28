@@ -1,6 +1,5 @@
 console.log('JS');
 
-
 $(document).ready(onReady);
 
 function onReady() {
